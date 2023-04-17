@@ -19,7 +19,20 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public long fibonacci(int n) {
-        return 0;
+        long a_i = 1;
+        long a_I = 1; // By I we mean i + 1
+        long a_n = 0;
+
+        if (n == 1 || n == 2){
+            return 1;
+        } else {
+            for (int i = 1 ; i <= n - 2 ; i++){
+                a_n = a_i + a_I;
+                a_i = a_I;
+                a_I = a_n;
+            }
+            return a_n;
+        }
     }
 
     /*
