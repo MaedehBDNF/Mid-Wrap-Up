@@ -58,7 +58,22 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public boolean isPalindrome(String line) {
-        return false;
+        String lineIgnoreSpace = "";
+        for (int i = 0; i <= line.length() -1; i++){
+            if (line.charAt(i) != ' '){
+                lineIgnoreSpace += line.charAt(i);
+            }
+        }
+        String lineIgnoreSpaceAndCase = lineIgnoreSpace.toLowerCase();
+        int lastIndex = lineIgnoreSpace.length() - 1;
+        int meanChar = (int) Math.floor(lastIndex / 2);  // optimizing program by checking the first char till mean char.
+
+        for(int i = 0; i <= meanChar; i++){
+            if (lineIgnoreSpaceAndCase.charAt(i) != lineIgnoreSpaceAndCase.charAt(lastIndex - i)){
+                return false;
+            }
+        }
+        return true;
     }
 
     /*
