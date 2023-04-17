@@ -88,6 +88,17 @@ public class Lecture4Exercises {
      *   lecture 4 page 26
      */
     public char[][] dotPlot(String str1, String str2) {
-        return null;
+        char[][] plot = new char[str1.length()][str2.length()];
+
+        for (int i = 0; i <= str1.length() - 1; i++) {
+            for(int j = 0 ; j <= str2.length() - 1 ; j++){
+                if (str1.charAt(i) == str2.charAt(j)){
+                    plot[i][j] = '*';
+                } else {
+                    plot[i][j] = ' ';
+                }
+            }
+        }
+        return plot;
     }
 }
