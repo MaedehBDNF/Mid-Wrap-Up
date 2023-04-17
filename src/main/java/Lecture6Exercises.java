@@ -8,7 +8,11 @@ public class Lecture6Exercises {
      *   lecture 6 page  16
      */
     public long calculateEvenSum(int[] arr) {
-        return 0L;
+        long evenSum = 0;
+        for (int i = 0 ; i <= arr.length -1 ; i++){
+            if (i % 2 == 0) evenSum += arr[i];
+        }
+        return evenSum;
     }
 
     /*
