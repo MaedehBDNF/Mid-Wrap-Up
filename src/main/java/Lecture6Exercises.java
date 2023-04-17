@@ -70,7 +70,34 @@ public class Lecture6Exercises {
      *   lecture 6 page 30
      */
     public List<Integer> primeFactors(int n) {
-        return null;
+        List<Integer> factors = new ArrayList<>();
+
+        ArrayList<Integer> primes = primesLessThanNumber(n);
+
+        for (int divisor : primes){
+            if (n % divisor == 0){
+                if (!factors.contains(divisor)){
+                    factors.add(divisor);
+                    n /= divisor;
+                }
+            }
+        }
+        return factors;
+    }
+
+    public static ArrayList<Integer> primesLessThanNumber(int n) {
+        ArrayList<Integer> primes = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            int counter = 0;
+            for (int num = i; num >= 1; num--) {
+                if (i % num == 0)
+                    counter = counter + 1;
+            }
+            if (counter == 2)
+                primes.add(i);
+        }
+        return primes;
     }
 
     /*
