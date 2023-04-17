@@ -5,7 +5,12 @@ public class Lecture4Exercises {
      *   lecture 4 page 15
      */
     public long factorial(int n) {
-        return 0L;
+        long factorial = 1;
+
+        for(int i = 1; i <= n; i++){
+            factorial *= i;
+        }
+        return factorial;
     }
 
     /*
