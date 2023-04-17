@@ -21,7 +21,31 @@ public class Lecture5Exercises {
      *   lecture 5 page 14
      */
     public String strongPassword(int length) throws Exception {
-        return null;
+        if (length < 3){
+            throw new Exception("The length must be at least 3!");
+        } else {
+            String password = "";
+            int i = 0;
+            while (i < length) {
+                int asciiCode = (int) Math.floor((Math.random() * 26) + 97);
+                char c = (char) asciiCode;   // a = 97 ... z = 122
+                password += c;
+                i++;
+                if (i == length) break;
+
+                int num = (int) Math.floor(Math.random() * 10);
+                password += num;
+                i++;
+                if (i == length) break;
+
+                int asciiSpecialChar = (int) Math.floor((Math.random() * 15) + 33);
+                char ch = (char) asciiSpecialChar;   // ! = 33 ... / = 47
+                password += ch;
+                i++;
+                if (i == length) break;
+            }
+            return password;
+        }
     }
 
     /*
