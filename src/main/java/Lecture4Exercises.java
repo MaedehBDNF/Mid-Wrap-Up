@@ -40,7 +40,15 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public String reverse(String word) {
-        return null;
+        String revWord = "";
+
+        int i = 0;
+        int lastIndex = word.length() - 1;
+        while (i <= lastIndex){
+            revWord += word.charAt(lastIndex - i);
+            i++;
+        }
+        return revWord;
     }
 
     /*
