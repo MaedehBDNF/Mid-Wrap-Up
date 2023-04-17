@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lecture6Exercises {
@@ -51,7 +52,16 @@ public class Lecture6Exercises {
      *   lecture 6 page 30
      */
     public List<List<String>> arrayToList(String[][] names) {
-        return null;
+        List<List<String>> finalList = new ArrayList<>();
+
+        for (int i = 0; i < names.length; i++){
+            ArrayList<String> row_i = new ArrayList<String>();
+            for (int j = 0; j < names[i].length; j++) {
+                row_i.add(names[i][j]);
+            }
+            finalList.add(row_i);
+        }
+        return finalList;
     }
 
     /*
