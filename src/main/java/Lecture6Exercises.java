@@ -105,6 +105,12 @@ public class Lecture6Exercises {
      *   lecture 6 page 30
      */
     public List<String> extractWord(String line) {
-        return null;
+        List<String> words = new ArrayList<String>();
+        String[] splitString = line.split("[^\\w]+");
+
+        for (String word : splitString){
+            words.add(word);
+        }
+        return words;
     }
 }
