@@ -5,7 +5,12 @@ public class Lecture4Exercises {
      *   lecture 4 page 15
      */
     public long factorial(int n) {
-        return 0L;
+        long factorial = 1;
+
+        for(int i = 1; i <= n; i++){
+            factorial *= i;
+        }
+        return factorial;
     }
 
     /*
@@ -14,7 +19,20 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public long fibonacci(int n) {
-        return 0;
+        long a_i = 1;
+        long a_I = 1; // By I we mean i + 1
+        long a_n = 0;
+
+        if (n == 1 || n == 2){
+            return 1;
+        } else {
+            for (int i = 1 ; i <= n - 2 ; i++){
+                a_n = a_i + a_I;
+                a_i = a_I;
+                a_I = a_n;
+            }
+            return a_n;
+        }
     }
 
     /*
@@ -22,7 +40,15 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public String reverse(String word) {
-        return null;
+        String revWord = "";
+
+        int i = 0;
+        int lastIndex = word.length() - 1;
+        while (i <= lastIndex){
+            revWord += word.charAt(lastIndex - i);
+            i++;
+        }
+        return revWord;
     }
 
     /*
@@ -32,7 +58,22 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public boolean isPalindrome(String line) {
-        return false;
+        String lineIgnoreSpace = "";
+        for (int i = 0; i <= line.length() -1; i++){
+            if (line.charAt(i) != ' '){
+                lineIgnoreSpace += line.charAt(i);
+            }
+        }
+        String lineIgnoreSpaceAndCase = lineIgnoreSpace.toLowerCase();
+        int lastIndex = lineIgnoreSpace.length() - 1;
+        int meanChar = (int) Math.floor(lastIndex / 2);  // optimizing program by checking the first char till mean char.
+
+        for(int i = 0; i <= meanChar; i++){
+            if (lineIgnoreSpaceAndCase.charAt(i) != lineIgnoreSpaceAndCase.charAt(lastIndex - i)){
+                return false;
+            }
+        }
+        return true;
     }
 
     /*
@@ -47,6 +88,17 @@ public class Lecture4Exercises {
      *   lecture 4 page 26
      */
     public char[][] dotPlot(String str1, String str2) {
-        return null;
+        char[][] plot = new char[str1.length()][str2.length()];
+
+        for (int i = 0; i <= str1.length() - 1; i++) {
+            for(int j = 0 ; j <= str2.length() - 1 ; j++){
+                if (str1.charAt(i) == str2.charAt(j)){
+                    plot[i][j] = '*';
+                } else {
+                    plot[i][j] = ' ';
+                }
+            }
+        }
+        return plot;
     }
 }
