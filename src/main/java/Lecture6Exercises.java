@@ -33,7 +33,16 @@ public class Lecture6Exercises {
      *   lecture 6 page 21
      */
     public double[][] matrixProduct(double[][] m1, double[][] m2) throws RuntimeException {
-        return null;
+        double[][] productOfm1m2 = new double[m1.length][m2[1].length];
+
+        for (int i = 0 ; i < m1.length ; i++){
+            for (int j = 0 ; j < m2[i].length ; j++){
+                for(int k = 0 ; k < m1[j].length ; k++){
+                    productOfm1m2[i][j] += m1[i][k] * m2[k][j];
+                }
+            }
+        }
+        return productOfm1m2;
     }
 
     /*
